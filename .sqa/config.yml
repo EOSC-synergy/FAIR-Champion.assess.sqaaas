@@ -1,0 +1,60 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/markwilkinson/FAIR-Champion:
+      branch: master
+      repo: https://github.com/markwilkinson/FAIR-Champion
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/markwilkinson/FAIR-Champion git:
+        commands:
+        - /usr/bin/env sh .sqa/script.flabby-silver-forest.sh
+        container: qc.acc_cheeky-lavender-paradise
+  QC.Doc:
+    repos:
+      github.com/markwilkinson/FAIR-Champion find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.scanty-lemon-kudu.sh
+        container: qc.doc_ready-rust-chameleon
+      github.com/markwilkinson/FAIR-Champion git:
+        commands:
+        - /usr/bin/env sh .sqa/script.geeky-smalt-birman.sh
+        container: qc.doc_sloppy-harlequin-markhor
+      github.com/markwilkinson/FAIR-Champion markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaggy-celadon-lizard.sh
+        container: qc.doc_ready-russet-caterpillar
+  QC.Lic:
+    repos:
+      github.com/markwilkinson/FAIR-Champion licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.cheeky-vermilion-jackal.sh
+        container: qc.lic_gloppy-beige-lion
+  QC.Sty:
+    repos:
+      github.com/markwilkinson/FAIR-Champion hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.greasy-burgundy-binturong.sh
+        container: qc.sty_clammy-cerulean-sheepdog
+      github.com/markwilkinson/FAIR-Champion jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.crappy-platinum-heron.sh
+        container: qc.sty_slimy-pink-dollar
+      github.com/markwilkinson/FAIR-Champion rubocop:
+        commands:
+        - /usr/bin/env sh .sqa/script.leaky-gamboge-mau.sh
+        container: qc.sty_hazy-denim-spider
+  QC.Ver:
+    repos:
+      github.com/markwilkinson/FAIR-Champion get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.breezy-ecru-dogfish.sh
+        container: qc.ver_paltry-magnolia-bear
+timeout: 5400
