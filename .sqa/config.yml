@@ -2,59 +2,59 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: main
+      branch: fix/updatego
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
-    github.com/markwilkinson/FAIR-Champion:
-      branch: master
-      repo: https://github.com/markwilkinson/FAIR-Champion
+    github.com/cessda/FAIR-Champion:
+      branch: main
+      repo: https://github.com/cessda/FAIR-Champion
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
   QC.Acc:
     repos:
-      github.com/markwilkinson/FAIR-Champion git:
+      github.com/cessda/FAIR-Champion git:
         commands:
-        - /usr/bin/env sh .sqa/script.flabby-silver-forest.sh
-        container: qc.acc_cheeky-lavender-paradise
+        - /usr/bin/env sh .sqa/script.banana_confused_spren.sh
+        container: qc.acc_papaya_thankful_serval
   QC.Doc:
     repos:
-      github.com/markwilkinson/FAIR-Champion find_doc_files.py:
+      github.com/cessda/FAIR-Champion find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-lemon-kudu.sh
-        container: qc.doc_ready-rust-chameleon
-      github.com/markwilkinson/FAIR-Champion git:
+        - /usr/bin/env sh .sqa/script.avocado_perceptive_spider.sh
+        container: qc.doc_clementine_brilliant_griffin
+      github.com/cessda/FAIR-Champion git:
         commands:
-        - /usr/bin/env sh .sqa/script.geeky-smalt-birman.sh
-        container: qc.doc_sloppy-harlequin-markhor
-      github.com/markwilkinson/FAIR-Champion markdownlint:
+        - /usr/bin/env sh .sqa/script.goldenrod_mischievous_meerkat.sh
+        container: qc.doc_royal_reserved_cassowary
+      github.com/cessda/FAIR-Champion markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-celadon-lizard.sh
-        container: qc.doc_ready-russet-caterpillar
+        - /usr/bin/env sh .sqa/script.bronze_visionary_termite.sh
+        container: qc.doc_caramel_outgoing_hippopotamus
   QC.Lic:
     repos:
-      github.com/markwilkinson/FAIR-Champion licensee:
+      github.com/cessda/FAIR-Champion licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-vermilion-jackal.sh
-        container: qc.lic_gloppy-beige-lion
+        - /usr/bin/env sh .sqa/script.currant_wondrous_octopus.sh
+        container: qc.lic_frost_cautious_puffin
   QC.Sty:
     repos:
-      github.com/markwilkinson/FAIR-Champion hadolint:
+      github.com/cessda/FAIR-Champion hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-burgundy-binturong.sh
-        container: qc.sty_clammy-cerulean-sheepdog
-      github.com/markwilkinson/FAIR-Champion jsonlint:
+        - /usr/bin/env sh .sqa/script.silver_witty_pegasus.sh
+        container: qc.sty_puce_proactive_giraffe
+      github.com/cessda/FAIR-Champion jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.crappy-platinum-heron.sh
-        container: qc.sty_slimy-pink-dollar
-      github.com/markwilkinson/FAIR-Champion rubocop:
+        - /usr/bin/env sh .sqa/script.mahogany_bright_baboon.sh
+        container: qc.sty_byzantium_articulate_caiman
+      github.com/cessda/FAIR-Champion rubocop:
         commands:
-        - /usr/bin/env sh .sqa/script.leaky-gamboge-mau.sh
-        container: qc.sty_hazy-denim-spider
+        - /usr/bin/env sh .sqa/script.fuchsia_upbeat_peacock.sh
+        container: qc.sty_royal_understanding_raven
   QC.Ver:
     repos:
-      github.com/markwilkinson/FAIR-Champion get_git_tags.py:
+      github.com/cessda/FAIR-Champion get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.breezy-ecru-dogfish.sh
-        container: qc.ver_paltry-magnolia-bear
+        - /usr/bin/env sh .sqa/script.ruby_rational_albatross.sh
+        container: qc.ver_grege_daring_parrot
 timeout: 5400
